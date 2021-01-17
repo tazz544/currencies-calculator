@@ -1,0 +1,10 @@
+@import "~src/assets/scss/variables";
+
+html, body {
+  background-color: darken($color--white, 4%);
+  height: 100%;
+}
+
+body {
+  margin: 0;
+}

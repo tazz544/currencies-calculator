@@ -1,0 +1,10 @@
+@import "~src/assets/scss/variables";
+
+body {
+  font-family: 'Playfair Display', serif;
+  color: $color--text-light;
+}
+
+b, strong {
+  font-weight: 600;
+}
