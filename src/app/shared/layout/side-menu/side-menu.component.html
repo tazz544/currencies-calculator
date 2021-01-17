@@ -1,0 +1,16 @@
+<div class="menu">
+  <div class="menu__app">
+    <span>Currencies</span>
+    <span>Calculator</span>
+    <span>(with cats! 😺)</span>
+  </div>
+  <ng-container *ngFor="let item of menu.items">
+    <a class="menu__item" mat-ripple [routerLink]="item.link"
+       routerLinkActive="active"
+       [routerLinkActiveOptions]="{exact: true}">
+      <div class="menu__item__icon"><i [classList]="item.icon"></i></div>
+      <div class="menu__item__label">{{ item.label }}</div>
+      <div class="menu__item__arrow"><i class="fas fa-chevron-right"></i></div>
+    </a>
+  </ng-container>
+</div>

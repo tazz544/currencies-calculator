@@ -1,0 +1,31 @@
+@import "~src/assets/scss/mixins/content";
+@import "~src/assets/scss/variables";
+
+:host {
+  flex-direction: column;
+  min-height: 100vh;
+  display: flex;
+  flex-grow: 1;
+}
+
+.panel {
+  display: flex;
+  flex-grow: 1;
+
+  &__menu {
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
+    background-color: $color--white;
+    animation: slideInLeft .5s;
+    transition-duration: .3s;
+    flex: 0 0 250px;
+  }
+
+  &__content {
+    flex-direction: column;
+    animation: fadeIn .3s;
+    position: relative;
+    padding: 24px;
+    display: flex;
+    flex-grow: 1;
+  }
+}
