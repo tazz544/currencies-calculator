@@ -1,0 +1,17 @@
+@import "mixins/content";
+@import "variables";
+
+:host {
+  @include page-host;
+}
+
+.statistics {
+  @include page;
+
+  position: relative;
+
+  &__card {
+    min-height: 80vh;
+    flex: 0 1 80%;
+  }
+}

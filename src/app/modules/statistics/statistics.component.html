@@ -1,0 +1,19 @@
+<div class="statistics">
+  <mat-card class="statistics__card" [class.disabled]="loading">
+    <ngx-charts-line-chart
+      [scheme]="colorScheme"
+      [legend]="false"
+      [showXAxisLabel]="true"
+      [showYAxisLabel]="true"
+      [xAxis]="true"
+      [yAxis]="true"
+      [xAxisLabel]="xAxisLabel"
+      [yAxisLabel]="yAxisLabel"
+      [autoScale]="2"
+      [timeline]="true"
+      [roundDomains]="true"
+      [results]="multi">
+    </ngx-charts-line-chart>
+  </mat-card>
+  <app-absolute-loader [show]="loading"></app-absolute-loader>
+</div>
