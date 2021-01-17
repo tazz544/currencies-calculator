@@ -1,0 +1,10 @@
+<div class="currency-rate" [class.currency-rate--loading]="loading">
+  <ng-container [ngTemplateOutlet]="value" [ngTemplateOutletContext]="{item: sourceRate}"></ng-container>
+  <div class="currency-rate__equals"><i class="fas fa-equals"></i></div>
+  <ng-container [ngTemplateOutlet]="value" [ngTemplateOutletContext]="{item: destinationRate}"></ng-container>
+  <app-absolute-loader [show]="loading"></app-absolute-loader>
+</div>
+
+<ng-template #value let-item='item'>
+  <div class="currency-rate__value">{{ item.value | currency:item.currency }}</div>
+</ng-template>

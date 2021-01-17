@@ -1,0 +1,29 @@
+@import "variables";
+
+.currency-rate {
+  color: $color--text-medium;
+  align-items: center;
+  white-space: nowrap;
+  position: relative;
+  font-size: 34px;
+  display: flex;
+
+  &__value {
+    margin-right: 6px;
+    font-weight: 300;
+  }
+
+  &__equals {
+    font-size: 18px;
+    margin: 0 12px;
+  }
+
+  &--loading {
+
+    .currency-rate__value,
+    .currency-rate__equals {
+      pointer-events: none;
+      opacity: 0.5;
+    }
+  }
+}
