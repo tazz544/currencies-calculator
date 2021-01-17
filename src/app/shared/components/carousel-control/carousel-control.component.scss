@@ -1,0 +1,96 @@
+@import "mixins/content";
+@import "variables";
+
+:host {
+  flex-grow: 1;
+}
+
+.carousel {
+  flex-direction: column;
+  position: relative;
+  margin: 0 24px;
+  display: flex;
+
+  &__nav {
+    transform: translateY(-50%);
+    pointer-events: none;
+    position: absolute;
+    display: flex;
+    width: 100%;
+    z-index: 1;
+    top: 45%;
+    left: 0;
+
+    &__arrow {
+      box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
+      background-color: $color--accent;
+      color: $color--text-medium;
+      transition-duration: .3s;
+      justify-content: center;
+      pointer-events: all;
+      align-items: center;
+      position: absolute;
+      border-radius: 50%;
+      user-select: none;
+      cursor: pointer;
+      font-size: 18px;
+      display: flex;
+      height: 46px;
+      width: 46px;
+
+      &.left {
+        margin-left: -22px;
+        left: 0;
+      }
+
+      &.right {
+        margin-right: -22px;
+        right: 0;
+      }
+
+      &:hover {
+        transform: scale(1.1);
+      }
+    }
+  }
+
+  &__stage {
+    position: relative;
+    min-height: 320px;
+    flex-wrap: nowrap;
+    overflow: hidden;
+    display: flex;
+    width: 100%;
+
+    &__item {
+      background-repeat: no-repeat;
+      background-position: center;
+      justify-content: center;
+      background-size: cover;
+      align-items: center;
+      display: flex;
+      flex-shrink: 0;
+      width: 100%;
+    }
+  }
+
+  &__card {
+    padding: 3px 0 0 0;
+    position: relative;
+
+    app-currency-rate {
+      background-color: $color--white;
+      padding: 8px;
+    }
+
+    &__bar {
+      background-color: $color--accent;
+      transition-duration: .05s;
+      border-radius: 3px;
+      position: absolute;
+      height: 3px;
+      left: 0;
+      top: 0;
+    }
+  }
+}

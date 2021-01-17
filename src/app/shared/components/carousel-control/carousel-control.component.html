@@ -1,0 +1,28 @@
+<div class="carousel" #carousel>
+  <div class="carousel__nav">
+    <ng-container *ngIf="isHovered">
+      <div class="carousel__nav__arrow left" (click)="prev()" @fadeLeftIn @fadeLeftOut>
+        <i class="fas fa-chevron-left"></i>
+      </div>
+      <div class="carousel__nav__arrow right" (click)="next()" @fadeRightIn @fadeRightOut>
+        <i class="fas fa-chevron-right"></i>
+      </div>
+    </ng-container>
+  </div>
+  <mat-card class="carousel__card">
+    <div class="carousel__card__bar" [ngStyle]="{'width': progress + '%'}" #bar></div>
+    <div class="carousel__stage" #stage [@carouselAnimation]="directionCounter">
+      <ng-container *ngIf="tabs.length > 0">
+        <ng-container *ngFor="let item of tabs; let i = index">
+          <ng-container *ngIf="item.index === currentSlideIndex">
+            <div class="carousel__stage__item" [ngStyle]="{'background-image': 'url(' + item.imageUrl + ')'}">
+              <app-currency-rate [sourceCurrency]="item.currencies.sourceCurrency"
+                                 [destinationCurrency]="item.currencies.destinationCurrency" #rate>
+              </app-currency-rate>
+            </div>
+          </ng-container>
+        </ng-container>
+      </ng-container>
+    </div>
+  </mat-card>
+</div>

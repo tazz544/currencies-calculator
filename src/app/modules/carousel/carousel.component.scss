@@ -1,0 +1,10 @@
+@import "mixins/content";
+@import "variables";
+
+:host {
+  @include page-host;
+}
+
+.carousel {
+  @include page;
+}
